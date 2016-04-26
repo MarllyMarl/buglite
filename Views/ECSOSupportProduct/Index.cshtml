@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Bug_Lite.Models.ECSOSupportProduct>
+
+@{
+    ViewBag.Title = "ECSO Support Products";
+}
+@if (@TempData["Message"] != null)
+ {
+    <div class="alert alert-success alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      @TempData["Message"]
+    </div> 
+ }
+
+<div class="row container panel panel-default">
+    <fieldset>
+        <ul class="breadcrumb">
+         <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+         <li class="active">ECSO Support Products</li>
+       </ul>
+        <legend>ECSO Support Products</legend>
+         <p>@Html.ActionLink("Create New", "Create", null, null, new { @class = "btn btn-success btn-md" })</p>
+         <br />
+        <!-- ECSO Support Products DataTable -->
+        <table id="ecsosp-datatable" class="table table-striped display compact">
+          <thead>
+             <tr>
+               <th class="hide_sort"></th>
+               <th class="hide_sort"></th>
+               <th>Category</th>
+               <th>Product</th>
+               <th>Developer&nbsp;</th>
+               <th>Primary &nbsp;</th>
+               <th>Secondary&nbsp;</th>
+               <th>Active&nbsp;</th>
+            </tr>
+          </thead>
+        <tbody>
+         @foreach (var item in Model) {
+          <tr>
+            <td>@Html.ActionLink("Edit", "Edit", new { id=item.ECSOSupportProductId }, new { @class = "btn btn-success btn-sm" })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = item.ECSOSupportProductId }, new { onclick = "return DeleteConfirm()", @class = "btn btn-danger btn-sm" })</td>
+           
+            <td>@Html.DisplayFor(modelItem => item.ECSOSupportCategory.SupportCategory)</td>
+            <td>@Html.DisplayFor(modelItem => item.SupportProduct)</td>
+            <td>@Html.DisplayFor(modelItem => item.ApplicationDeveloper.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.PrimarySupport.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.SecondarySupport.Name)</td>
+            <td class="alignCheckBox">@Html.DisplayFor(modelItem => item.Active)</td>
+          </tr>
+         }
+       </tbody>
+     </table>
+  </fieldset>
+ </div><!-- container END -->
+
+<!-- Delete JS Dialog -->
+ <script type="text/javascript">
+   function DeleteConfirm() {
+      if (confirm("Are you sure you want to delete this Support Product?"))
+       return true;
+       else
+      return false;
+   }
+</script>
+<!-- JS references needed for delete notification message -->
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script> 
+<!-- JS references needed for dataTable setup -->
+<script src="~/Scripts/jquery.dataTables.js"></script>        
+
+<br /><br /><br /><br />
+<br /><br /><br />
+
+

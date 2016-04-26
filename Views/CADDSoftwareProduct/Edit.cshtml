@@ -1,0 +1,53 @@
+﻿@model Bug_Lite.Models.CADDSoftwareProduct
+@using Bug_Lite.HelperClasses
+
+@{
+    ViewBag.Title = "Edit - CADD Software Product";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="container col-md-10 col-md-offset-1 panel panel-default">
+         <ul class="breadcrumb">
+          <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+          <li> @Html.ActionLink("CADD Software Products", "Index")</li>
+          <li class="active">Edit - CADD Software Product</li>
+         </ul>
+      <fieldset>
+        <legend class="text-success">Edit - CADD Software Product</legend>
+        <div class="required"><span class="requiredasterisk">*</span> Required</div>
+        @Html.HiddenFor(model => model.CADDSoftwareProductId)
+        <div class="col-md-3 col-md-offset-4">
+         <div class="editor-label">
+            @Html.LabelFor(model => model.CADDSoftware, new { @class="req-asterisk" })
+         </div>
+         <div class="editor-field">
+            @Html.TextBoxFor(model => model.CADDSoftware, new { @class = "genericTextBox form-control" })
+            @*@Html.RequiredFieldFor(model => model.CADDSoftware)*@
+            @Html.ValidationMessageFor(model => model.CADDSoftware)
+         </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+         </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+         </div>
+         <p>
+          <input type="submit" value="Save" class="btn btn-success btn-md"/>
+         </p>
+        </div><!-- col-md-3 END -->
+    </fieldset>
+  </div><!-- container END -->  
+}
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br /> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />

@@ -1,0 +1,83 @@
+﻿@model Bug_Lite.Models.ECSOSupportProduct
+@using Bug_Lite.HelperClasses
+
+@{
+    ViewBag.Title = "Create - ECSO Support Product";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    
+    <div class="container col-md-12 col-md-offset-0 panel panel-default">
+         <ul class="breadcrumb">
+          <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+          <li> @Html.ActionLink("ECSO Support Product", "Index")</li>
+          <li class="active">Create - ECSO Support Product</li>
+         </ul>
+        <fieldset>
+        <legend class="text-success">Create - ECSO Support Product</legend>
+        <div class="required"><span class="requiredasterisk">*</span> Required</div>
+        <div class="col-md-3 col-md-offset-4">
+         <div class="editor-label">
+            @Html.LabelFor(model => model.ECSOSupportCategoryId, "ECSO Support Category", new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ECSOSupportCategoryId", null, "-- Select a Category --", new { @class = "genericDropDownList form-control"})
+            @*@Html.RequiredFieldFor(model => model.ECSOSupportCategoryId)*@
+            @Html.ValidationMessageFor(model => model.ECSOSupportCategoryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DeveloperId, "Application Developer")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DeveloperId", null,  "-- Select a Developer --", new { @class = "genericDropDownList form-control"})
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrimarySupportId, "Primary Support")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PrimarySupportId", null, "-- Select a Primary Support --", new { @class = "genericDropDownList form-control"})
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SecondarySupportId, "Secondary Support")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SecondarySupportId", null, "-- Select a Secondary Support --", new { @class = "genericDropDownList form-control"})
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SupportProduct, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SupportProduct, new { @class = "genericTextBox form-control" })
+            @*@Html.RequiredFieldFor(model => model.SupportProduct)*@
+            @Html.ValidationMessageFor(model => model.SupportProduct)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.Active, new { @checked = "checked" })
+        </div>
+         <p>
+          <input type="submit" value="Create" class="btn btn-success btn-md"/>
+         </p>
+       </div><!-- col-md-3 END -->
+    </fieldset>
+  </div><!-- container END -->
+}
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br /> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />

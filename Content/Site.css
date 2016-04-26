@@ -1,0 +1,671 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+
+/* CSS Styles*/
+@media screen {
+@font-face {
+  font-family: 'Calibri';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Calibri'), url('calibri.ttf') format('truetype');
+  }
+}
+
+body
+{
+    background-color: #F7F7F7;
+    font-size: 11pt;
+    font-family: Calibri, Tahoma, Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #555;
+}
+
+a, a *
+{
+    color: #14498D;
+    padding: 2px;
+    -moz-transition: background-color 0.35s linear;
+    -o-transition: background-color 0.35s linear;
+    -webkit-transition: background-color 0.35s linear;
+    transition: background-color 0.35s linear;
+    -moz-transition: color 0.35s linear;
+    -o-transition: color 0.35s linear;
+    -webkit-transition: color 0.35s linear;
+    transition: color 0.35s linear;
+}
+
+/* Links Hover */
+a:hover, a:hover *
+{
+    /*background-color:#335;
+    color: #FFFFFF;*/
+    text-decoration:none;
+    text-shadow: 1px 1px 1px #335;
+}
+
+a.noLink, a.noLink *
+{
+}
+a.noLink:hover, a.noLink:hover *
+{
+    background-color: transparent;
+}
+
+p, ul
+{
+    line-height: 1.4em;
+}
+
+img
+{
+    border: 0;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1
+{
+    font-size: 2em;
+}
+h2
+{
+    font-size: 1.5em;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5
+{
+    font-size: 1em;
+}
+h6
+{
+    font-size: 0.9em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header
+{
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0px 20px 0px 20px;
+}
+
+#header h1
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #1C3D60;
+    border: none;
+    font-family: Calibri, Tahoma, Verdana, Helvetica, Sans-Serif;
+    font-size: 32px !important;
+}
+
+/* Horizontal Line Across */
+#main
+{
+    border-top: solid 7px #134A8A;
+    margin: 5px 0px 30px 0px;
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+    margin: 0;
+    text-align: right;
+    padding: 0;
+}
+
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+    margin-right: 2px;
+}
+
+ul#menu li.selectedMenuItem a
+{
+    background-color:#2C7DE2;
+    color:#fff;
+    -moz-transition: background-color 0.35s linear;
+    -o-transition: background-color 0.35s linear;
+    -webkit-transition: background-color 0.35s linear;
+    transition: background-color 0.35s linear;
+    padding: 7px 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul#menu li#greeting
+{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Top right Menu */
+ul#menu li a
+{
+    background-color: #134A8A;
+    color: #fff;
+    -moz-transition: background-color 0.35s linear;
+    -o-transition: background-color 0.35s linear;
+    -webkit-transition: background-color 0.35s linear;
+    transition: background-color 0.35s linear;
+    padding: 7px 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Top right Menu Hover Color */
+ul#menu li a:hover
+{
+    background-color: Green;
+    text-decoration: none;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    font-weight: bold;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+th.col25{
+  width: 25%;
+}
+th.col33{
+  width: 33%;
+}
+th.col50{
+  width: 50%;
+}
+th.col66{
+  width: 66%;
+}
+th.col75{
+  width: 75%;
+}
+th.col100{
+  width: 100%;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4; 
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.required:after 
+{
+    content: "•";
+    color: red;
+    margin-left: 0px; margin-right: 0px;vertical-align: top;  
+    font:1.3em 'Trebuchet MS',helvetica,arial,verdana; 
+}
+
+/* BL Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label {
+    margin: 0.5em 0;
+    font-size: 14px;
+}
+.display-label25 {
+    margin: 0.5em 0;
+    width: 25%;
+    font-size: 14px;
+}
+.display-label33 {
+    margin: 0.5em 0;
+    width: 33%;
+    font-size: 14px;
+}
+.display-label50 {
+    margin: 0.5em 0;
+    width: 50%;
+    font-size: 14px;
+}
+.display-label66 {
+    margin: 0.5em 0;
+    width: 66%;
+    font-size: 14px;
+}
+.display-label75 {
+    margin: 0.5em 0;
+    width: 75%;
+    font-size: 14px;
+}
+        
+.display-field {
+    margin: 0.5em 0;
+    font-size: 14px;
+}
+
+.editor-label {
+    margin: 0.5em 0;
+    font-size: 14px;
+}
+.editor-label25 {
+    margin: 0.5em 0;
+    width: 25%;
+    font-size: 14px;
+}
+.editor-label33 {
+    margin: 0.5em 0;
+    width: 33%;
+    font-size: 14px;
+}
+.editor-label50 {
+    margin: 0.5em 0;
+    width: 50%;
+    font-size: 14px;
+    border:1px solid black;
+}
+.editor-label66 {
+    margin: 0.5em 0;
+    width: 66%;
+    font-size: 14px;
+}
+.editor-label75 {
+    margin: 0.5em 0;
+    width: 75%;
+    font-size: 14px;
+}
+
+.editor-field-original {
+    margin: 0.5em 0;
+    width: 33em;
+    font-size: 14px;
+}
+.editor-field {
+    margin: 0.5em 0;
+    font-size: 14px;
+}
+.editor-field100 {
+    margin: 0.5em 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+TextBox {
+    border: 1px solid #ccc;  
+    width: 100%;
+    font-size: 1.1em;
+}
+
+TextBox50 {
+    border: 1px solid #ccc;  
+    width: 50%;
+    font-size: 1.1em;
+}
+
+.textBoxContactName {
+    border: 1px solid #ccc;  
+    width: 80%;
+    font-size: 1.1em;
+    color:Green;  
+    background-color:Menu;
+}
+
+.textBoxContactNumber {
+    border: 1px solid #ccc;  
+    width: 50%;
+    font-size: 1.1em;
+    color:Green;  
+    background-color:Menu;
+}
+
+.textBoxContactEmail {
+    border: 1px solid #ccc;  
+    width: 80%;
+    font-size: 1.1em;
+    color:Green;  
+    background-color:Menu;
+}
+
+ input#Subject {
+    border: 1px solid #ccc;  
+    width: 96%;
+    font-size: 1.1em;
+ }
+ 
+ input#FPID {
+    border: 1px solid #ccc; 
+    width: 7.2em;
+    font-size: 1.1em;
+ }
+ 
+/* Description Textarea */
+/*Textarea {
+    width: 42em;
+    height: 3em;
+    padding: 3px;
+    border: 1px solid #ccc; 
+    font-size: 1.1em;
+}*/
+
+Textarea {
+    width: 97%;
+    height: 3.3em;
+    border: 1px solid #ccc; 
+    font-size: 1.1em;
+}
+
+/* Style for Input[type="file"] for Create Attachments */
+input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 90%;
+}
+
+/* Style for Input[name="UploadFile"] for Edit Attachments */
+input[name="UploadFile"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1em;
+    color: #444;
+    width: 90%;
+}
+
+/*
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}*/
+
+.note {
+ color: red;  
+ font:0.9em 'Trebuchet MS',helvetica,arial,verdana;
+ text-align:left;     
+}
+
+ /*.text-box {
+    border: 1px solid #CCC;
+    width: 20em;
+    font-size: 1.2em;
+}*/
+
+/*.text-box.multi-line { 
+    border: 1px solid #CCC;
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
+*/
+
+/* BL Button Styles 
+--------------------*/
+.bugLiteButton, input.bugLiteButton
+{
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+a:link.bugLiteButton, a:visited.bugLiteButton, a:active.bugLiteButton, .bugLiteButton:hover, .searchButton:hover, div.bugLiteButton.hover
+{
+    background: #356094;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+}
+
+a:link.bugLiteButton:active 
+{
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;  
+}
+
+/* Table Data Styles
+ ------------------------------*/ 
+#gradient-style
+{
+	 border-collapse:collapse;
+	 background:#EFF4FB url(~/Content/images/TableLineShadow.gif) repeat-x;
+	 border-left:1px solid #686868;
+	 border-right:1px solid #686868;
+	 font:0.8em/145% 'Trebuchet MS',helvetica,arial,verdana;
+	 color: #333;
+	 border-bottom: dotted 1px #333;
+}
+#gradient-style th
+{
+	padding: 8px;
+	white-space: nowrap;
+	color:#333;
+}
+#gradient-style td
+{
+	padding: 8px; 
+}
+#gradient-style tfoot tr td
+{
+	background:#333 url(~/Content/images/TableLineVertical.gif) repeat-x;
+    color:#fff
+}
+#gradient-style tbody tr:hover td
+{
+	border-bottom: 1px dashed #bbb;
+	background-color:#FFFFCC; /* light-yellow hover */
+}
+.priorityTextPosition {
+  text-align:center;
+  font-weight:bold;
+}
+
+.statusTextPosition {
+   text-align:center;
+}
+
+.iconDisplay {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+.paging-style
+{
+    font:0.8em/145% 'Trebuchet MS',helvetica,arial,verdana;
+    font-weight:bold;  
+}
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid green;
+  color:green;
+  font-size:90%;
+  text-align:right;
+  }
+ .row-highlight 
+ {
+    background-color:Yellow;
+ }  
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, #menucontainer {
+    margin-top: 40px;
+}
+
+div#title {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay {
+    font-size: 0.9em;
+    color:Green;
+    text-align: right;
+    margin: 10px;   
+}
+
+#logindisplay a:link {
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+    text-decoration: none;
+}
+
+

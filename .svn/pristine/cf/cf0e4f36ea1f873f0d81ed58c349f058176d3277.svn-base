@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Bug_Lite.Models.Contact>
+
+<!-- DIV Section for rendering Contacts -->
+<div id="dialogSearch">    
+    @Html.Hidden("HiddenContactId")    
+    <div class="">
+        <input type=text id="TextBoxSearch" class="form-control" style="display:inline" value=""/><!-- Hidden Search TextBox. Pr -->       
+        <span class="glyphicon glyphicon-user"></span>
+    </div>
+    <div class="table table-striped">
+      <!-- Contacts List renders here -->
+      <div id="Result" class=""></div>
+    </div>
+</div>
+
+<!--Script for Binding\Fetching Contacts to View -->
+<script type="text/javascript">
+    $(function () {
+        /*$("#TextBoxSearch").val(function ()  $("#TextBoxSearch").keyup(function ()  { */
+        $("#TextBoxSearch").val(function ()  {
+            var url = '@Url.Action("SearchContacts", "Contact")'    
+            $.get(url,function (data) {
+                $("#Result").html(data);
+                var message = $('#message');
+                var tr = $('#gradient-style').find('tr');
+                
+                tr.bind('click', function (event) {
+                    var value = '';
+                    tr.removeClass('row-highlight');
+                    $(this).addClass('row-highlight');
+                    value = $(this).attr('id');
+
+                    $('#HiddenContactId').val(value);
+                });
+            });
+         
+        });
+    });
+    //});
+</script>

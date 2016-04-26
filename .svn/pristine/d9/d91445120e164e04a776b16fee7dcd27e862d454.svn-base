@@ -1,0 +1,8 @@
+﻿@using Bug_Lite.Static_Classes
+
+@if(Request.IsAuthenticated) {
+    <text>Login as: <strong>@Utilities.UserName()</strong></text>
+}
+else {
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+}

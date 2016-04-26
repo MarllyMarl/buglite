@@ -1,0 +1,105 @@
+﻿@model Bug_Lite.Models.FDOTUser
+@using Bug_Lite.HelperClasses
+
+@{
+    ViewBag.Title = "Create - FDOT User";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    
+    <div class="container col-md-12 col-md-offset-0 panel panel-default">
+         <ul class="breadcrumb">
+          <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+          <li> @Html.ActionLink("Manage Users", "Index")</li>
+          <li class="active">Create - FDOT User</li>
+         </ul>
+        <fieldset>
+        <legend class="text-success">Create - FDOT User</legend>
+        <div class="required"><span class="requiredasterisk">*</span> Required</div>
+        <div class="col-md-3 col-md-offset-4">
+          <div class="editor-label">
+            @Html.LabelFor(model => model.Name, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name, new { @class = "genericTextBox form-control" })
+            @Html.RequiredFieldFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Username, new { @class = "genericTextBox form-control" })
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Password, new { @class = "genericTextBox form-control" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumber, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "genericTextBox form-control" })
+            @Html.RequiredFieldFor(model => model.PhoneNumber)
+            @Html.ValidationMessageFor(model => model.PhoneNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailAddress, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "genericTextBox form-control" })
+            @Html.RequiredFieldFor(model => model.EmailAddress)
+            @Html.ValidationMessageFor(model => model.EmailAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserSectionId, "Section", new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserSectionId", null, "-- Select Section --", new { @class = "genericDropDownList form-control" })
+            @Html.RequiredFieldFor(model => model.UserSectionId)
+            @Html.ValidationMessageFor(model => model.UserSectionId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserRoleId, "Role", new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserRoleId", null, "-- Select Role --", new { @class = "genericDropDownList form-control" })
+            @Html.RequiredFieldFor(model => model.UserRoleId)
+            @Html.ValidationMessageFor(model => model.UserRoleId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.Active, new { @checked = "checked" })
+        </div>
+         <p>
+          <input type="submit" value="Create" class="btn btn-success btn-md"/>
+         </p>
+       </div><!-- col-md-3 END -->
+    </fieldset>
+  </div><!-- container END -->
+}
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br /> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />

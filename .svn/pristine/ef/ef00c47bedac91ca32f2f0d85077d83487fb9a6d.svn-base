@@ -1,0 +1,38 @@
+@model Bug_Lite.Models.Issue
+
+<div id="attachments" style="border-bottom: 2px solid #B3CBDF;">
+    @if (Model.Attachments.Count() > 0)
+    { 
+        <div class="activityHead">
+          Attachments:
+        </div>
+     <table>
+        <tr>
+            <th></th>    
+            <th></th>
+        </tr>
+        @foreach (Bug_Lite.Models.Attachment attachment in Model.Attachments)
+        { 
+          <tr>
+            <td>
+                @(Html.ActionLink(attachment.FileName, "GetAttachment", new { id = attachment.AttachmentId }))
+               @* <p></p>*@
+            </td>
+            <td>
+               <p></p>
+            </td>
+            <td>
+                <p></p>
+            </td>
+          </tr>
+        }
+      </table>
+    }<br />
+    @using (Html.BeginForm("AddAttachmentEdit", "Issue", new { id = Model.IssueId }, FormMethod.Post, new { enctype = "multiple/form-data" }))
+    { 
+      <label for="file">Filename:</label>
+      <input type="file" name="file" id="file" />
+    }   
+</div>
+
+

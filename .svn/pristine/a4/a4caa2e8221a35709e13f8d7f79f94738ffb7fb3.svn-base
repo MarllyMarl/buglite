@@ -1,0 +1,141 @@
+﻿@model Bug_Lite.Models.Issue
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Issue</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WindowsOperatingSystemId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WindowsOperatingSystemId)
+            @Html.ValidationMessageFor(model => model.WindowsOperatingSystemId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CADDSoftwareProductId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CADDSoftwareProductId)
+            @Html.ValidationMessageFor(model => model.CADDSoftwareProductId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FDOTReleaseVersionId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FDOTReleaseVersionId)
+            @Html.ValidationMessageFor(model => model.FDOTReleaseVersionId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IssueTypeId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IssueTypeId)
+            @Html.ValidationMessageFor(model => model.IssueTypeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ECSOSupportCategoryId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ECSOSupportCategoryId)
+            @Html.ValidationMessageFor(model => model.ECSOSupportCategoryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ECSOSupportProductId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ECSOSupportProductId)
+            @Html.ValidationMessageFor(model => model.ECSOSupportProductId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FDOTUserId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FDOTUserId)
+            @Html.ValidationMessageFor(model => model.FDOTUserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PriorityCodeId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PriorityCodeId)
+            @Html.ValidationMessageFor(model => model.PriorityCodeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StatusCodeId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StatusCodeId)
+            @Html.ValidationMessageFor(model => model.StatusCodeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IssueCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IssueCode)
+            @Html.ValidationMessageFor(model => model.IssueCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FPID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FPID)
+            @Html.ValidationMessageFor(model => model.FPID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Subject)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Details)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Details)
+            @Html.ValidationMessageFor(model => model.Details)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreateDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreateDate)
+            @Html.ValidationMessageFor(model => model.CreateDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModifiedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModifiedDate)
+            @Html.ValidationMessageFor(model => model.ModifiedDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

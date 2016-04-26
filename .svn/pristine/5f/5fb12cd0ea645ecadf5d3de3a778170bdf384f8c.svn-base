@@ -1,0 +1,52 @@
+﻿@model Bug_Lite.Models.UserRole
+@using Bug_Lite.HelperClasses
+
+@{
+    ViewBag.Title = "Create - User Role";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    
+    <div class="container col-md-12 col-md-offset-0 panel panel-default">
+         <ul class="breadcrumb">
+          <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+          <li> @Html.ActionLink("Manage User Roles", "Index")</li>
+          <li class="active">Create - User Role</li>
+         </ul>
+        <fieldset>
+        <legend class="text-success">Create - User Role</legend>
+        <div class="required"><span class="requiredasterisk">*</span> Required</div>
+        <div class="col-md-3 col-md-offset-4">
+          <div class="editor-label">
+            @Html.LabelFor(model => model.Role, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Role, new { @class = "genericTextBox form-control" })
+            @Html.RequiredFieldFor(model => model.Role)
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.Active, new { @checked = "checked" })
+        </div>
+         <p>
+          <input type="submit" value="Create" class="btn btn-success btn-md"/>
+         </p>
+       </div><!-- col-md-3.. END -->
+    </fieldset>
+  </div><!-- container END -->
+}
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br /> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />

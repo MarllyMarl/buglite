@@ -1,0 +1,84 @@
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\obj\Debug\Bug Lite.csprojResolveAssemblyReference.cache
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\obj\Debug\Bug_Lite.Migrations.InitialCreate.resources
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\obj\Debug\Bug_Lite.Migrations.MimiTypeExpansion.resources
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\obj\Debug\Bug Lite.csproj.GenerateResource.Cache
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Bug Lite.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Bug Lite.pdb
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Mvc.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Http.WebHost.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Http.SelfHost.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Http.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Net.Http.WebRequest.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Net.Http.Formatting.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Net.Http.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\ActionMailer.Net.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\ActionMailer.Net.Mvc.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Antlr3.Runtime.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\EntityFramework.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Microsoft.Web.Infrastructure.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Newtonsoft.Json.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\PagedList.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Helpers.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Optimization.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Razor.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.WebPages.Deployment.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.WebPages.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.WebPages.Razor.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\WebGrease.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\ActionMailer.Net.pdb
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\ActionMailer.Net.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\ActionMailer.Net.Mvc.pdb
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\ActionMailer.Net.Mvc.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Antlr3.Runtime.pdb
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\EntityFramework.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\PagedList.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Optimization.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Razor.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\Microsoft.Web.Infrastructure.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.Helpers.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.WebPages.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.WebPages.Deployment.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\bin\System.Web.WebPages.Razor.xml
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\obj\Debug\Bug Lite.dll
+E:\All Source & Resource Kit\VS2012\WebApps\BugLite\obj\Debug\Bug Lite.pdb
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\Bug Lite.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\Bug Lite.pdb
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Mvc.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Http.WebHost.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Http.SelfHost.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Http.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Net.Http.WebRequest.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Net.Http.Formatting.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Net.Http.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\ActionMailer.Net.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\ActionMailer.Net.Mvc.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\Antlr3.Runtime.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\EntityFramework.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\PagedList.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Helpers.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Optimization.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Razor.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.WebPages.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.WebPages.Razor.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\WebGrease.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\ActionMailer.Net.pdb
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\ActionMailer.Net.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\ActionMailer.Net.Mvc.pdb
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\ActionMailer.Net.Mvc.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\Antlr3.Runtime.pdb
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\EntityFramework.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\PagedList.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Optimization.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Razor.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.Helpers.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.WebPages.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\bin\System.Web.WebPages.Razor.xml
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\obj\Debug\Bug_Lite.Migrations.InitialCreate.resources
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\obj\Debug\Bug_Lite.Migrations.MimiTypeExpansion.resources
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\obj\Debug\Bug Lite.csproj.GenerateResource.Cache
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\obj\Debug\Bug Lite.dll
+C:\Users\Marllye'\Documents\Visual Studio 2012\Projects\BugLite\obj\Debug\Bug Lite.pdb

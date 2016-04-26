@@ -1,0 +1,86 @@
+﻿@model PagedList.IPagedList<Bug_Lite.Models.Issue>
+
+@{
+    ViewBag.Title = "Issue Search";
+}
+
+@using (Html.BeginForm()) 
+{ 
+}
+<table id="issues-datatable" class="display compact">
+  <thead>
+	  <tr>
+	    <th>Issue # &nbsp;</th>
+        <th class="hide_sort"></th>
+        <th class="hide_sort"></th>
+	    <th>Issue Type</th>
+		<th>Status</th>
+		<th>Priority</th>
+		<th>Subject</th>
+		<th>Support Product&nbsp;</th>
+        <th>Assigned To&nbsp;</th>
+	    <th>Create Date&nbsp;</th>
+	    <th>Created By&nbsp;</th>
+	  </tr>
+</thead>
+    @foreach (var item in Model)
+    {
+        string statusCode = item.StatusCode.Status;
+        string priorityCode = item.PriorityCode.Priority;
+        <tr>                  
+            <td>@Html.ActionLink(item.IssueCode, "Edit", new { id = item.IssueId })</td>
+            <td title="Edit">@Html.ActionLink("__", "Edit", new { id = item.IssueId }, new { @class = "editIcon" })</td>
+            <td title="Details">@Html.ActionLink("__", "Details", new { id = item.IssueId }, new {@class = "detailsIcon" })</td>
+            <td>@Html.DisplayFor(modelItem => item.IssueType.Type)</td>
+
+             @switch (statusCode)
+             {
+                 case "Active": 
+                    <td class="statusTextPosition">@Html.DisplayFor(modelItem => item.StatusCode.Status) <img class="iconDisplay" src="~/Content/images/issueopen.png" alt="" /></td>  
+                    break;
+                 case "Pending": 
+                    <td class="statusTextPosition">@Html.DisplayFor(modelItem => item.StatusCode.Status) <img class="iconDisplay" src="~/Content/images/inprogress.png" alt="" /></td>  
+                    break;
+                 case "Closed(Resolved)": 
+                    <td class="statusTextPosition">@Html.DisplayFor(modelItem => item.StatusCode.Status) <img class="iconDisplay" src="~/Content/images/issueclose.png" alt="" /></td>  
+                    break;
+                 case "Closed(Unresolved)": 
+                    <td class="statusTextPosition">@Html.DisplayFor(modelItem => item.StatusCode.Status) <img class="iconDisplay" src="~/Content/images/issueclose.png" alt="" /></td>  
+                    break;
+                 default:
+                    <td class="statusTextPosition">@Html.DisplayFor(modelItem => item.StatusCode.Status)</td>    
+                    break;
+             }
+             @switch (priorityCode)
+             {
+                 case "Critical": 
+                    <td class="priorityTextPosition">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)<img class="iconDisplay" src="~/Content/images/critical.png" alt="" /></td>
+                    break;
+                 case "High": 
+                    <td class="priorityTextPosition">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)<img class="iconDisplay" src="~/Content/images/high.png" alt="" /></td>
+                    break;
+                 case "Medium": 
+                    <td class="priorityTextPosition">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)<img class="iconDisplay" src="~/Content/images/medium.png" alt="" /></td>
+                    break;
+                 case "Low": 
+                    <td class="priorityTextPosition">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)<img class="iconDisplay" src="~/Content/images/low.png" alt="" /></td>
+                    break;
+                 default:
+                    <td class="priorityTextPosition">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)</td>
+                    break;
+             }
+            <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+            <td>@Html.DisplayFor(modelItem => item.ECSOSupportProduct.SupportProduct)</td>
+            <td>@Html.DisplayFor(modelItem => item.FDOTUser.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedBy.Name)</td>
+        </tr>
+    }
+</table>
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+
+

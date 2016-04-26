@@ -1,0 +1,304 @@
+﻿@using Bug_Lite.Static_Classes
+@model Bug_Lite.Models.Issue
+
+@{
+    ViewBag.Title = "Issue Details";
+}
+@if (@TempData["Message"] != null)
+ {
+    <div class="alert alert-success alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      @TempData["Message"]
+    </div> 
+ }
+<div class="container col-md-12 col-md-offset-0 panel panel-default">
+ <fieldset>
+     <ul class="breadcrumb">
+         <li>@Html.ActionLink("View Issues", "Index")</li>
+         <li class="active">Issue Details</li>
+      </ul>
+    <legend class="text-success">Issue Number: @Html.DisplayFor(model => model.IssueCode)</legend>
+      <div>
+        @MvcHtmlString.Create(Html.ActionLink("Edit", "Edit", new { id = Model.IssueId }, new { @class = "btn btn-success btn-md" }) + "")  
+        @*@MvcHtmlString.Create(Html.ActionLink("Delete", "Delete", new { id = Model.IssueId }, new { onclick = "return DeleteConfirm()", @class = "btn btn-danger btn-md" }) + "").If("User,Admin")*@
+      </div>
+      <br /><br />
+      <div class="row bckgrd-highlight">
+          <div class="col-md-4">
+            @Html.LabelFor(model => model.Subject)
+            <br />
+            @Html.DisplayFor(model => model.Subject)
+          </div>
+          <div class="col-md-4">
+            @Html.LabelFor(model => model.FPID)
+            <br/>
+            @if (Model.FPID == null)
+            { <p class="notification">None</p> }
+            else
+            { @Html.DisplayFor(model => model.FPID) }
+         </div>
+      </div><!-- row END -->
+      <br />
+      <div class="row bckgrd-highlight">
+         <div class="col-md-4">
+            @Html.LabelFor(model => model.IssueType.Type)
+            <br />
+            @Html.DisplayFor(model => model.IssueType.Type)
+          </div>
+          <div class="col-md-4">
+            @Html.LabelFor(model => model.ECSOSupportCategory.SupportCategory)
+            <br />
+              @if (Model.ECSOSupportCategory == null)
+              { <p class="notification">None</p> }
+              else
+              { @Html.DisplayFor(model => model.ECSOSupportCategory.SupportCategory) }
+          </div>
+          <div class="col-md-4">
+            @Html.LabelFor(model => model.ECSOSupportProduct.SupportProduct)
+             <br />
+              @if (Model.ECSOSupportProduct == null)
+              { <p class="notification">None</p> }
+              else
+              { @Html.DisplayFor(model => model.ECSOSupportProduct.SupportProduct) }
+          </div>
+       </div><!-- row END -->
+       <br />
+       <div class="row bckgrd-highlight">
+        <div class="col-md-4">
+           @Html.LabelFor(model => model.FDOTUser.Name, "Assigned To")
+           <br />
+           @Html.DisplayFor(model => model.FDOTUser.Name)
+        </div>
+        <div class="col-md-4">
+           @Html.LabelFor(model => model.PriorityCode.Priority)
+           <br />
+
+            @if(Model.PriorityCode.Priority == "Critical")
+            {
+             <span class="critical">@Html.DisplayFor(model => model.PriorityCode.Priority)</span>
+            }
+
+            @if(Model.PriorityCode.Priority == "High")
+            {
+             <span class="high">@Html.DisplayFor(model => model.PriorityCode.Priority)</span>
+            }
+
+            @if(Model.PriorityCode.Priority == "Medium")
+            {
+             <span class="medium">@Html.DisplayFor(model => model.PriorityCode.Priority)</span>
+            }
+
+            @if(Model.PriorityCode.Priority == "Low")
+            {
+             <span class="low">@Html.DisplayFor(model => model.PriorityCode.Priority)</span>
+            }
+        </div>
+        <div class="col-md-4">
+           @Html.LabelFor(model => model.StatusCode.Status)
+           <br />
+           
+            @if (Model.StatusCode.Status == "Open")
+            {
+              <span class="open">@Html.DisplayFor(model => model.StatusCode.Status)</span>
+            }
+
+             @if (Model.StatusCode.Status == "In Progress")
+            {
+              <span class="inProgress">@Html.DisplayFor(model => model.StatusCode.Status)</span>
+            }
+
+             @if (Model.StatusCode.Status == "Closed")
+            {
+              <span class="closed">@Html.DisplayFor(model => model.StatusCode.Status)</span>
+            }
+        </div> 
+      </div><!-- row END -->
+      <br />  
+      <div class="row bckgrd-highlight">
+        <div class="col-md-4">
+           @Html.LabelFor(model => model.CADDSoftwareProduct.CADDSoftware)
+           <br />
+            @if (Model.CADDSoftwareProduct == null)
+              { <p class="notification">None</p> }
+              else
+              { @Html.DisplayFor(model => model.CADDSoftwareProduct.CADDSoftware) }
+        </div>
+        <div class="col-md-4">
+           @Html.LabelFor(model => model.FDOTReleaseVersion.ReleaseVersion)
+           <br />
+             @if (Model.FDOTReleaseVersion == null)
+              { <p class="notification">None</p> }
+              else
+              { @Html.DisplayFor(model => model.FDOTReleaseVersion.ReleaseVersion) }
+        </div>
+        <div class="col-md-4">
+           @Html.LabelFor(model => model.WindowsOperatingSystem.OperatingSystem)
+           <br />
+           @Html.DisplayFor(model => model.WindowsOperatingSystem.OperatingSystem)
+        </div>
+      </div><!-- row END -->    
+      <hr />
+      <div class="row bckgrd-highlight">
+        <!-- wider grid class necessary for full-width elements -->
+        <div class="col-md-10">
+          @Html.LabelFor(model => model.Details)
+          <br />
+          @Html.DisplayFor(model => model.Details)
+        </div>
+      </div><!-- row END -->
+      <br />
+     <div class="row bckgrd-highlight">
+        <div class="col-md-4">
+          <p class="display-label">Attached Files</p>
+           <!-- If NO file(s) attached -->
+           @if ((Model == null) || (Model.Attachments.Count == 0))
+           {
+             <p class="notification">No File(s) Attached</p>
+           }
+           else
+           {   <!-- If file(s) attached -->
+               foreach (Bug_Lite.Models.Attachment attachedFile in Model.Attachments.ToList())
+               {
+                <p>                
+                @Html.ActionLink(@attachedFile.FileName, "GetAttachment", new { attachmentId = attachedFile.AttachmentId })
+                </p>
+               }
+           }
+        </div>
+      </div><!-- row END -->
+      <hr />
+      <div class="row bckgrd-highlight">
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.CreatedBy.Name, "Created By")
+          <br />
+          @if (Model.CreatedBy == null)
+           { <p class="notification">None</p> }
+           else
+           { @Html.DisplayFor(model => model.CreatedBy.Name) }
+        </div>
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.CreatedBy.PhoneNumber)
+          <br />
+          @if (Model.CreatedBy.PhoneNumber == null)
+           { <p class="notification">None</p> }
+           else
+           { @Html.DisplayFor(model => model.CreatedBy.PhoneNumber) }
+        </div>
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.CreatedBy.EmailAddress)
+          <br />
+          @if (Model.CreatedBy.EmailAddress == null)
+           { <p class="notification">None</p> }
+           else
+           { @Html.DisplayFor(model => model.CreatedBy.EmailAddress) }
+        </div>
+      </div><!-- row END -->
+      <br />
+     <div class="row bckgrd-highlight">
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.CreateDate)
+          <br />
+          @Html.DisplayFor(model => model.CreateDate)
+        </div>
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.ModifiedDate)
+          <br />
+          @Html.DisplayFor(model => model.ModifiedDate)
+        </div>
+      </div><!-- row END -->
+      <br />
+      <div class="row bckgrd-highlight">
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.Contact.ContactName)
+          <br />
+           @if (Model.Contact == null)
+           { <p class="notification">None</p> }
+           else
+           { @Html.DisplayFor(model => model.Contact.ContactName) }
+        </div>
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.Contact.ContactNumber)
+          <br />
+          @if (Model.Contact == null)
+           { <p class="notification">None</p> }
+           else
+           { @Html.DisplayFor(model => model.Contact.ContactNumber) }
+        </div>
+        <div class="col-md-4">
+          @Html.LabelFor(model => model.Contact.EmailAddress)
+          <br />
+          @if (Model.Contact == null)
+           { <p class="notification">None</p> }
+           else
+           { @Html.DisplayFor(model => model.Contact.EmailAddress) }
+        </div>
+      </div><!-- row END -->
+           
+     @if (Model.IssueHistory != null)
+     {
+        <hr />
+        <h3>Issue History</h3> 
+           <div class="toggle row">
+             <p class="heading">Click Here to View History <span class="glyphicon glyphicon-time"></span></p> 
+               <!-- If Issue History is available -->
+               @if(Model.IssueHistory.Count > 0)
+               {
+                <div class="content">
+                  @foreach (var record in Model.IssueHistory)
+                  {
+                    <div class="panel panel-success">
+                     <div class="panel-heading">Notes <span class="glyphicon glyphicon-book"></span></div>
+                        <div class="panel-body">
+                            <span class="formatNotesText">@record.Comment</span>
+                           <hr />
+                            <div class="small">
+                               <p class="col-md-3"><strong>Modified Date</strong><br />@record.ModifiedDate.ToString()</p>
+                               <p class="col-md-3"><strong>Modified By</strong><br />@record.FDOTUser.Name</p>
+                               <p class="col-md-3"><strong>Status</strong><br />@record.Status</p>
+                            </div><!-- small - END  -->
+                        </div><!-- panel-body - END  -->
+                       
+                     </div><!-- panel panel-success - END  -->
+                  }
+                </div> <!-- content - END  -->  
+               }
+              <!-- If No Issue History is available -->
+              @if (Model.IssueHistory.Count <= 0)
+              {
+               <div class="content"><span class="notification">No History Available</span></div> 
+              }
+          </div> <!-- toggle - END  -->
+        <br>
+     }
+    <div>
+        @MvcHtmlString.Create(Html.ActionLink("Edit", "Edit", new { id = Model.IssueId }, new { @class = "btn btn-success btn-md" }) + "")  
+        @*@MvcHtmlString.Create(Html.ActionLink("Delete", "Delete", new { id = Model.IssueId }, new { onclick = "return DeleteConfirm()", @class = "btn btn-danger btn-md" }) + "").If("User,Admin")*@
+    </div>
+     <br />
+     <!-- JS references needed for delete notification message -->
+     <script src="~/Scripts/jquery.js"></script>
+     <script src="~/Scripts/bootstrap.min.js"></script>
+     <!-- Issue History Toggle -->
+     <script type="text/javascript">
+         jQuery(document).ready(function () {
+             jQuery(".content").hide();
+             //toggle the componenet with class msg_body
+             jQuery(".heading").click(function () {
+                 jQuery(this).next(".content").slideToggle(500);
+             });
+         });
+     </script>
+    <!-- Delete Issue Javascript - NOT USED IN DETAILS VIEW 
+    <script type="text/javascript">
+     function DeleteConfirm() 
+     {
+         if (confirm("Are you sure you want to delete this issue?"))
+             return true;
+         else
+             return false;
+     }
+  </script>-->
+ </fieldset>
+</div> <!-- container END -->
+
+

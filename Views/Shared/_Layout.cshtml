@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+@using Bug_Lite.Static_Classes
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- STYLES -->
+    @Styles.Render("~/Content/css")
+    <link href="@Url.Content("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+    <!-- SCRIPTS -->
+    @Scripts.Render("~/Scripts/js") 
+
+    <!-- DATATABLE SETUP -->
+    <script type="text/javascript" class="init">
+        $(document).ready(function () {
+            $('#issues-datatable').DataTable({
+                "order": [[10, "desc"]],/* Sort by Column - [Create Date][Descending Order][#10] */
+                dom: 'T<"clear">lfrtip',
+                tableTools: {
+                    "sRowSelect": "multi",
+                    "sSwfPath": "http://www.dot.state.fl.us/ecso/scripts/copy-csv-xls-pdf.swf",
+                    "aButtons": [
+                        {
+                            "sExtends": "csv",
+                            "sButtonText": "Export to CSV",
+                            "sTooltip": "Export to CSV File",
+                            "bFooter": false,
+                            "oSelectorOpts": { page: "current" },
+                        },
+                        {
+                            "sExtends": "pdf",
+                            "sButtonText": "Export to PDF",
+                            "oSelectorOpts": { page: "current" },
+                        }
+                    ]
+                }
+
+            });
+
+            $('#ecsosp-datatable').DataTable();
+
+            $('#users-datatable').DataTable();
+
+            $('#contacts-datatable').DataTable({"order":[[3,"desc"]]});
+        });
+	</script>
+
+    <!-- DATATABLE SETUP -->
+    <script type="text/javascript" class="">
+        $(document).ready(function () {
+           
+        });
+    </script>
+
+    <!-- FUNCTION CALLS TO PARTIAL CLASSES -->
+    <script type="text/javascript">
+        function UrlHelper() {
+            this.ContactIndex = function () {
+                return '@Url.Action("PartialIndex", "Contact")';
+            }
+            this.ContactCreate = function () {
+                return '@Url.Action("Create", "Contact")';
+            }
+            this.ContactSearch = function () {
+                return '@Url.Action("SearchContacts", "Contact")';
+            }
+            this.ContactSearchById = function () {
+                return '@Url.Action("SearchContactsById", "Contact")';
+            }
+            this.GetProductById = function () {
+                return '@Url.Action("GetProductById", "Issues")';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-inverse" role="navigation">
+              <div class="navbar-header" style="cursor:pointer;">
+               <img alt="BugLite 2.0" title="BugLite 2.0" src="@(Url.Content("~/Content/images/BugLiteLogo.png"))" onclick="location.href='@Url.Action("Index", "Issues")'"/>
+              </div>
+              <ul class="navbar-nav nav">
+                  @MvcHtmlString.Create("<li>" + Html.ActionLink("View Issues", "Index", "Issues") + "</li>").If("User,Admin")
+                  @MvcHtmlString.Create("<li>" + Html.ActionLink("Create Issue", "Create", "Issues") + "</li>").If("User,Admin")
+                  @MvcHtmlString.Create("<li>" + Html.ActionLink("Help", "Index", "Help") + "</li>").If("User,Admin")
+                  @MvcHtmlString.Create("<li>" + Html.ActionLink("Administration", "Index", "Admin")  + "</li>").If("User,Admin")
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                   <li><a href="#"> @Html.Partial("_LogOnPartial") <span class="glyphicon glyphicon-user"></span></a></li>
+              </ul>
+            </nav> 
+        </header>
+        <div class="container">
+            @RenderBody()
+       </div>
+       <div id="footer">
+         <div class="container text-center">
+           <p>&copy; 2015 - 2016 | Design and developed by: Engineering\CADD Systems Office</p> 
+         </div>
+      </div>
+   </div><!-- Container END -->
+   <noscript>
+      <div>
+        <h2>This site requires JavaScript</h2>
+      </div>
+   </noscript>
+</body>
+</html>

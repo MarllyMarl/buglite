@@ -1,0 +1,273 @@
+﻿@model Bug_Lite.Models.Issue
+@using Bug_Lite.HelperClasses
+           
+@{
+    ViewBag.Title = "Create New Issue";
+}
+
+@* TO DO: Add Create Contact feature *MGD* *@
+
+<script type="text/javascript">
+    $(function () {
+
+        $("select#CADDSoftwareProductId").change(function () {
+            var selectedCADDProductId = $(this).val();
+            var releaseVersionsSelect = $("select#FDOTReleaseVersionId");
+
+            // Clear FDOTReleaseVersions Select
+            releaseVersionsSelect.empty();
+            releaseVersionsSelect.append($('<option value="">--- Select ---</option>'));
+
+            if (selectedCADDProductId != null) {
+                $.getJSON('@Url.Action("GetReleaseVersionsList")', { caddProductId: selectedCADDProductId },
+                function (versionData) {
+                    $.each(versionData, function (index, version) {
+                        releaseVersionsSelect.append($('<option/>', { value: version.Value, text: version.Text }));
+                    });
+                });
+            }
+        });
+
+        $("select#ECSOSupportCategoryId").change(function () {
+            var selectedCategoryId = $(this).val();
+            var supportProductsSelect = $("select#ECSOSupportProductId");
+
+            // Clear ECSOSupportProductId Select
+            supportProductsSelect.empty();
+            supportProductsSelect.append($('<option value="">--- Select ---</option>'));
+
+            if (selectedCategoryId != null) {
+                $.getJSON('@Url.Action("GetSupportProductsList")', { supportCategoryId: selectedCategoryId },
+                function (productData) {
+                    $.each(productData, function (index, product) {
+                        supportProductsSelect.append($('<option/>', { value: product.Value, text: product.Text }));
+                    });
+                });
+            }
+        });
+
+        $("select#ECSOSupportProductId").change(function () {
+            var selectedProductId = $(this).val();
+
+            // If Selected Product Not Null
+            if (selectedProductId != null) {
+                $.getJSON('@Url.Action("GetProductById")', { id: selectedProductId },
+                function (data) {
+                    $("select#FDOTUserId option").each(function (index, option) {
+                        if (option.value == data) {
+                            option.selected = true;
+                            return false;
+                        }
+                    });
+                });
+            }
+        });
+
+        //$("[name='Contacts']").change(function () {
+        //    $("#TextContactName").val($(this).val());
+        //    $("#TextContactNumber").val($(this).val());
+        //    $("#TextContactEmail").val($(this).val());
+        //});
+
+        //$('#Contacts').change(function () {
+        //    /*GET*/
+        //    var contactName = $(this).val();
+        //    //alert(contactName);
+
+        //    $.getJSON("/Contact/SearchContactsById?id=" + contactId,
+        //    $.getJSON("/Contact/JsonSearchContacts?contactFilter=" + contactName,
+
+        //       function (contacts) {
+        //           // Gets Contact Display Fields
+        //           $('#TextContactName').val(contacts.ContactName);
+        //       });
+        //});
+
+    });
+</script>
+
+<!-- Script for binding\fetching contact details to View -->
+<script type="text/javascript">
+    $(function () {
+        $('#Contacts').change(function () {
+            /*GET*/
+            var contactId = $(this).val();
+
+            // Uncomment the line below for Deployment to Server due to the difference in Physical Path Location. *MGD* 
+              $.getJSON("/BugLite/Issues/SearchContactsById?id=" + contactId, 
+            //$.getJSON("/Issues/SearchContactsById?id=" + contactId,
+           
+                function (data) {
+                    // Gets Contact Display Fields
+                    $('#ContactId').val(data.ContactId);  // Gets Contact's Id
+
+                    $('#TextContactName').val(data.ContactName);
+                    $('#TextContactNumber').val(data.ContactNumber);
+                    $('#TextContactEmail').val(data.EmailAddress);
+                });
+        });
+    });
+</script>
+
+@using (Html.BeginForm("Create", "Issues", FormMethod.Post, new { id = "CreateIssueFormId", enctype = "multipart/form-data" }))
+{      
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.ContactId)
+
+ <div class="container col-md-12 col-md-offset-0 panel panel-default">
+     <ul class="breadcrumb">
+         <li>@Html.ActionLink("View Issues", "Index")</li>
+         <li class="active">Create Issue</li>
+     </ul>
+    <form class="form form-inline form-horizontal" role="form">
+     <fieldset>
+      <legend class="text-success">Create New Issue</legend>
+         <div class="required"><span class="requiredasterisk">*</span> Required</div>
+      <div class="row bckgrd-highlight">
+       <div class="col-md-6">
+         @Html.LabelFor(model => model.Subject, new { @class = "req-asterisk" })
+         @Html.TextBoxFor(model => model.Subject, new { @class = "editor-field95 form-control" })
+         @Html.ValidationMessageFor(model => model.Subject)
+         <br />
+       </div>
+      <div class="col-md-4">
+         @Html.LabelFor(model => model.FPID)
+         @Html.TextBoxFor(model => model.FPID, new { @class = "form-control" })
+         <br />
+      </div>
+     </div><!-- row END -->
+      <br />
+     <div class="row bckgrd-highlight">
+      <div class="col-md-4">
+         @Html.LabelFor(model => model.IssueType.Type)
+          <br />
+         @Html.DropDownList("IssueTypeId", null, new { @class = "form-control" })
+          <br />
+      </div>
+      <div class="col-md-4">
+         @Html.LabelFor(model => model.ECSOSupportCategory.SupportCategory)
+         @Html.DropDownList("ECSOSupportCategoryId", (SelectList)ViewBag.ECSOSupportCategoryId, "--- Select ---", new { @class = "form-control" })
+          <br />
+      </div>
+      <div class="col-md-4">
+         @Html.LabelFor(model => model.ECSOSupportProduct.SupportProduct)
+         @Html.DropDownList("ECSOSupportProductId", (SelectList)ViewBag.ECSOSupportProductId, "--- Select ---", new { @class = "form-control" })
+          <br />
+      </div>
+     </div><!-- row END -->
+      <br />
+     <div class="row bckgrd-highlight">
+      <div class="col-md-4">
+        @Html.LabelFor(model => model.FDOTUser.Name, "Assigned To", new { @class = "req-asterisk" })
+        @Html.DropDownListFor(model => model.FDOTUserId, ViewBag.UsersList as SelectList, "--- Select ---", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.FDOTUserId)
+         <br />
+      </div>
+      <div class="col-md-4">
+        @Html.LabelFor(model => model.PriorityCode.Priority)
+         <br />
+        @Html.DropDownList("PriorityCodeId", null, new { @class = "form-control" })
+         <br />
+      </div>
+      <div class="col-md-4">
+        @Html.LabelFor(model => model.StatusCode.Status)
+         <br />
+        @Html.DropDownList("StatusCodeId", null, new { @class = "form-control" })
+         <br />
+      </div> 
+     </div><!-- row END -->
+      <br />
+     <div class="row bckgrd-highlight">
+      <div class="col-md-4">
+       @Html.LabelFor(model => model.CADDSoftwareProduct.CADDSoftware)
+        <br />
+       @Html.DropDownList("CADDSoftwareProductId", (SelectList)ViewBag.CADDSoftwareProductId, "--- Select ---", new { @class = "form-control" })
+        <br />
+      </div>
+      <div class="col-md-4">
+       @Html.LabelFor(model => model.FDOTReleaseVersion.ReleaseVersion)
+        <br />
+       @Html.DropDownList("FDOTReleaseVersionId", (SelectList)ViewBag.FDOTReleaseVersionId, "--- Select ---", new { @class = "form-control" })
+        <br />
+      </div>
+      <div class="col-md-4">
+       @Html.LabelFor(model => model.WindowsOperatingSystem.OperatingSystem)
+        <br />
+       @Html.DropDownList("WindowsOperatingSystemId", null, new { @class = "form-control" })
+        <br />
+      </div>
+     </div><!-- row END -->
+     </fieldset>
+    </form>
+   <!-- ISSUE DETAILS SECTION -->
+   <fieldset> 
+     <legend class="req-asterisk-details">Issue Details</legend>
+      <div class="col-md-4 row">
+        @Html.TextAreaFor(model => model.Details, new { @class = "detailsTextArea form-control", rows = "5", cols = "80" })
+        @Html.ValidationMessageFor(model => model.Details)
+      </div> 
+   </fieldset>
+    <br />
+   <!-- CREATE BUTTON #1 -->
+   <div>
+     <input id="ButtonCreate1" type="submit" value="Create" class="btn btn-success btn-lg center-block"/>
+   </div>
+    <!-- CONTACT SECTION -->
+    <form class="form-horizontal">
+     <fieldset>
+      <legend>Contact</legend>
+        <div class="form-group row">
+            <div class="col-md-4">
+            @Html.DropDownList("Contacts", (IEnumerable<SelectListItem>)ViewBag.Contact, "--- Select ---", new { @class = "form-control contactsDDL" })
+            
+            @*@Html.DropDownList("Contacts", (SelectList)ViewData["District"], "--- Select ---",  new { @class = "form-control"})*@
+            @*<span class="col-md-6 contactsDDL">@Html.DropDownList("Contacts", (SelectList)ViewBag.ContactName, "--- Select ---", new { @class = "form-control" })</span>*@
+            </div>
+        </div>
+        <div class="col-md-6">
+         <div class="">
+          <label for="TextContactName" class="">Name</label>
+          <input type="text" id="TextContactName" readonly="readonly" name="TextContactName" class="form-control" />
+          @*@Html.TextBox("TextContactName", null, new { @class = "form-control", @readonly = "readonly" })*@
+         </div>
+        </div>
+        <div class="col-md-6">
+         <div class="">
+          <label for="TextContactNumber" class="">Phone</label>
+          <input type="text" id="TextContactNumber" readonly="readonly"  name="TextContactNumber" class="form-control" />
+         </div>
+        </div>
+        <div class="col-md-6">
+         <div class="">
+          <label for="TextContactEmail" class="">Email</label>
+          <input type="text" id="TextContactEmail" readonly="readonly"  name="TextContactEmail" class="form-control" />
+         </div>
+        </div>
+     </fieldset>
+    </form> 
+   <!-- FILE ATTACHMENTS SECTION -->
+   <fieldset>
+     <legend>Attachments <span><img alt="Attachment" src="@(Url.Content("~/Content/images/attachment.png"))" /></span></legend>
+      <div id="files_list" class="">
+         <div class="">
+           <input type="file" name="files" id="file1" class="fileAttachment form-control"/>
+            <br /> 
+         </div>
+         <div class="">
+           <input type="file" name="files" id="file2" class="fileAttachment form-control"/>
+             <br />
+         </div>
+         <div class="">
+           <input type="file" name="files" id="file3" class="fileAttachment form-control"/>
+             <br />
+         </div>
+      </div>
+   </fieldset>
+   <!-- CREATE BUTTON #2 -->
+   <div>
+     <input id="ButtonCreate" type="submit" value="Create" class="btn btn-success btn-lg center-block"/>
+   </div>
+   <br />
+</div><!-- container END -->
+}
+

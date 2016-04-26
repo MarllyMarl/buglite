@@ -1,0 +1,45 @@
+﻿@model Bug_Lite.Models.Attachment
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Attachment</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IssueId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IssueId)
+            @Html.ValidationMessageFor(model => model.IssueId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FileName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FileName)
+            @Html.ValidationMessageFor(model => model.FileName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContentType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContentType)
+            @Html.ValidationMessageFor(model => model.ContentType)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

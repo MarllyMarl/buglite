@@ -1,0 +1,200 @@
+﻿@model Bug_Lite.Models.Issue
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Email Notification</title>
+    <!--link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" /-->
+    <style type="text/css">
+        /* CSS Styles*/
+        body { background-color: #F7F7F7; font-size: 11pt; font-family: Calibri, Tahoma, Verdana, Helvetica, Sans-Serif; margin: 0; padding: 0; color: #555; }
+
+        a.noLink, a.noLink * {}
+        a.noLink:hover, a.noLink:hover * { background-color: transparent; }
+        a:link { color: #034af3; text-decoration: underline; }
+        a:visited { color: #505abc; }
+        a:hover { color: #1d60ff; text-decoration: none; }
+        a:active { color: #12eb87; }
+        p, ul { margin-bottom: 20px; line-height: 1.6em; }
+        header, footer, nav, section { display: block; }
+
+        /* HEADINGS */
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.2em; }
+        h4 { font-size: 1.1em; }
+
+        /* PRIMARY LAYOUT ELEMENTS */
+        .page { width: 100%; margin-left: auto; margin-right: auto; }
+        #header { margin-bottom: 0px; color: #000; padding: 0px 20px 0px 20px; }
+        #header h1 { font-weight: bold; padding: 5px 0; margin: 0; color: #1C3D60; border: none; font-family: Calibri, Tahoma, Verdana, Helvetica, Sans-Serif; font-size: 32px !important; }
+        #main { border-top: solid 7px #134A8A; margin: 5px 0px 30px 0px; }
+        #footer { color: #999; padding: 10px 0; text-align: center; line-height: normal; margin: 0; font-size: .9em; }
+
+        /* TABLE */
+        table { border: solid 1px #e8eef4; border-collapse: collapse; width: 100%;}
+        table th { padding: 6px 5px; text-align: left; font-weight: bold; background-color: #e8eef4; border: solid 1px #e8eef4; }
+        table td { padding: 5px; border: solid 1px #e8eef4; }
+
+        /* MISC */
+        .clear { clear: both; }
+        div#title { display: block; float: left; text-align: left; }
+
+        /* Styles for editor and display helpers */
+        .display-label {
+            margin: 0.5em 0;
+            font-size: 14px;
+        }
+
+        .display-label25 {
+            margin: 0.5em 0;
+            width: 25%;
+            font-size: 14px;
+        }
+        .display-label33 {
+            margin: 0.5em 0;
+            width: 33%;
+            font-size: 14px;
+        }
+        .display-label50 {
+            margin: 0.5em 0;
+            width: 50%;
+            font-size: 14px;
+        }
+        .display-label75 {
+            margin: 0.5em 0;
+            width: 75%;
+            font-size: 14px;
+        }
+
+        .display-field {
+            margin: 0.5em 0;
+            font-size: 14px;
+        }
+
+        .editor-label {
+            margin: 0.5em 0;
+            font-size: 14px;
+        }
+
+        .editor-field {
+            margin: 0.5em 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+    <body>      
+        <h1>The following Issue has recently been edited:</h1>
+
+        <p>
+        @Html.ActionLink("View Issue", "Edit", "Issues", "http", "dotscoecdb02", "Bug-Lite", new { id = Model.IssueId }, "")
+        </p>
+
+        <fieldset>
+            <legend>Issue Number: @Html.DisplayFor(model => model.IssueCode)</legend>
+       
+            <table>
+                <tr>
+                    <th class="display-label66">@Html.LabelFor(model => model.Subject)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.FPID)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.Subject)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.FPID)</td>
+                </tr>
+            </table>     
+            <table>
+                <tr>
+                    <th class="display-label33">@Html.LabelFor(model => model.IssueType.Type)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.ECSOSupportCategory.SupportCategory)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.ECSOSupportProduct.SupportProduct)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.IssueType.Type)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.ECSOSupportCategory.SupportCategory)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.ECSOSupportProduct.SupportProduct)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th class="display-label33">@Html.LabelFor(model => model.FDOTUser.Name, "Assigned To")</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.PriorityCode.Priority)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.StatusCode.Status)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.FDOTUser.Name)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.PriorityCode.Priority)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.StatusCode.Status)</td>
+                </tr>
+            </table>   
+            <table>
+                <tr>
+                    <th class="display-label33">@Html.LabelFor(model => model.CADDSoftwareProduct.CADDSoftware)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.FDOTReleaseVersion.ReleaseVersion)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.WindowsOperatingSystem.OperatingSystem)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.CADDSoftwareProduct.CADDSoftware)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.FDOTReleaseVersion.ReleaseVersion)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.WindowsOperatingSystem.OperatingSystem)</td>
+                </tr>
+            </table>
+            <hr />
+            <table>
+                <tr>
+                    <th class="display-label">@Html.LabelFor(model => model.Details)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.Details)</td>
+                </tr>
+            </table>  
+            <hr />
+            <table>
+                <tr>
+                    <th class="display-label33">@Html.LabelFor(model => model.CreatedBy.Name, "Created By")</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.CreatedBy.PhoneNumber)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.CreatedBy.EmailAddress)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.CreatedBy.Name)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.CreatedBy.PhoneNumber)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.CreatedBy.EmailAddress)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th class="display-label33">@Html.LabelFor(model => model.CreateDate)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.ModifiedDate)</th>
+                    <th class="display-label33"></th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.CreateDate)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.ModifiedDate)</td>
+                    <td></td>
+                </tr>
+            </table>
+            <hr />
+            <table>
+                <tr>
+                    <th class="display-label33">@Html.LabelFor(model => model.Contact.ContactName)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.Contact.ContactNumber)</th>
+                    <th class="display-label33">@Html.LabelFor(model => model.Contact.EmailAddress)</th>
+                </tr>
+                <tr>
+                    <td class="display-field">@Html.DisplayFor(model => model.Contact.ContactName)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.Contact.ContactNumber)</td>
+                    <td class="display-field">@Html.DisplayFor(model => model.Contact.EmailAddress)</td>
+                </tr>
+            </table>    
+
+            <p>
+            @Html.ActionLink("View Issue", "Edit", "Issues", "http", "dotscoecdb02", "Bug-Lite", new { id = Model.IssueId }, "")
+            </p>
+        </fieldset>
+    </body>
+</html>

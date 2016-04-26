@@ -1,0 +1,123 @@
+﻿@model PagedList.IPagedList<Bug_Lite.Models.Issue>
+
+@{
+    ViewBag.Title = "Issues";
+}
+@if (@TempData["Message"] != null)
+ {
+    <div class="alert alert-success alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      @TempData["Message"]
+    </div> 
+ }
+@using (Html.BeginForm()) 
+{ 
+  <div class="row container panel panel-default">
+      <!--<form class="form-inline" role="form">-->
+       <fieldset>
+         <legend class="text-success">View Avialable Issues</legend> 
+          <div class="form-group">
+            <div class="col-md-3">
+              <label class="control-label" for="FDOTUserFilter">Assigned To</label>
+                <br />
+               @Html.DropDownList("FDOTUserFilter", (SelectList)ViewBag.FDOTUserId, new { @class = "form-control"})
+            </div>
+            <div class="col-md-3">
+              <label class="control-label" for="IssueTypeFilter">Issue Type</label>
+                <br />
+              @Html.DropDownList("IssueTypeFilter", (SelectList)ViewBag.IssueTypeId, "--- Select All ---", new { @class = "form-control"})
+            </div>
+            <div class="col-md-3">
+              <label class="control-label" for="StatusFilter">Status</label>
+                <br />
+              @Html.DropDownList("StatusFilter", (SelectList)ViewBag.StatusId, "--- Select All ---", new { @class = "form-control"})
+            </div>
+            <div class="col-md-3">
+              <label class="control-label" for="PriorityFilter">Priority</label>
+                <br />
+              @Html.DropDownList("PriorityFilter", (SelectList)ViewBag.PriorityId, "--- Select All ---", new { @class = "form-control"})
+            </div>
+        </div>
+         <br /><br /><br />
+         <div class="row col-md-20 col-md-offset-5">
+           <button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-search"></span> Search</button>
+         </div>
+         <br />
+       </fieldset>
+      <!--</form>-->
+  </div>
+ <br />
+}
+ <table id="issues-datatable" class="display compact"> <!-- class="compact"-->
+  <thead>
+	  <tr>  
+	    <th>Issue#&nbsp;&nbsp;</th>
+        <th class="hide_sort"></th>
+        <th class="hide_sort"></th>
+	    <th>Issue Type</th>
+		<th>Status&nbsp;&nbsp;</th>
+		<th>Priority&nbsp;&nbsp;</th>
+		<th>Subject</th>
+		<th>Product&nbsp;&nbsp;</th>
+        <th>Assigned To&nbsp;&nbsp;</th>
+        <th>Modified&nbsp;&nbsp;</th>
+	    <th>Created&nbsp;&nbsp;</th>
+	    <th>Created By&nbsp;</th>
+	  </tr>
+</thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+        string statusCode = item.StatusCode.Status;
+        string priorityCode = item.PriorityCode.Priority;
+        <tr>               
+            <td title="Details">@Html.ActionLink(item.IssueCode, "Details", new { id = item.IssueId })</td>
+            <td title="Edit">@Html.ActionLink("__", "Edit", new { id = item.IssueId }, new { @class = "editIcon" })</td>
+            <td title="Details">@Html.ActionLink("__", "Details", new { id = item.IssueId }, new {@class = "detailsIcon" })</td>
+            <td>@Html.DisplayFor(modelItem => item.IssueType.Type)</td>
+
+             @switch (statusCode)
+             {
+                 case "Open": 
+                    <td class="statusTextPosition open">@Html.DisplayFor(modelItem => item.StatusCode.Status) </td>  
+                    break;
+                 case "In Progress": 
+                    <td class="statusTextPosition inProgress">@Html.DisplayFor(modelItem => item.StatusCode.Status) </td>  
+                    break;
+                 case "Closed": 
+                    <td class="statusTextPosition closed">@Html.DisplayFor(modelItem => item.StatusCode.Status) </td>  
+                    break;
+                 default:
+                    <td class="statusTextPosition">@Html.DisplayFor(modelItem => item.StatusCode.Status)</td>    
+                    break;
+             }
+             @switch (priorityCode)
+             {
+                 case "Critical": 
+                    <td class="priorityTextPosition critical">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)</td>
+                    break;
+                 case "High": 
+                    <td class="priorityTextPosition high">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)</td>
+                    break;
+                 case "Medium": 
+                    <td class="priorityTextPosition medium">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)</td>
+                    break;
+                 case "Low": 
+                    <td class="priorityTextPosition low">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)</td>
+                    break;
+                 default:
+                    <td class="priorityTextPosition">@Html.DisplayFor(modelItem => item.PriorityCode.Priority)</td>
+                    break;
+             }
+            <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+            <td>@Html.DisplayFor(modelItem => item.ECSOSupportProduct.SupportProduct)</td>
+            <td>@Html.DisplayFor(modelItem => item.FDOTUser.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.ModifiedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedBy.Name)</td>
+        </tr>
+    }
+ </tbody>
+ </table>
+
+<br /><br /><br /><br />

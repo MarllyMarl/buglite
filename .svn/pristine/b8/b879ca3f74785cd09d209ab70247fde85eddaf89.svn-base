@@ -1,0 +1,374 @@
+﻿.editor-field {
+    margin: 0.5em 0;
+    font-size: 14px;
+}
+
+.editor-field95 {
+    width: 90%;
+    font-size: 14px;
+}
+
+.genericTextBox {
+    width: 126%;
+}
+
+.genericDropDownList {
+     width: 126%;
+}
+
+.textBoxContactName {
+    width: 0%;
+}
+
+.textBoxContactNumber {
+    width: 0%;
+}
+
+.textBoxContactEmail {
+    width: 115%;
+}
+
+.detailsTextArea {
+   /*margin: 0px -0.84375px 0px 0px;
+   width: 824px; 
+   height: 115px;*/
+   
+   /*width:300px;
+   height: 300px;*/
+
+   margin: 0px -0.84375px 0px 0px;
+   width: 324%; 
+   height: 115px;
+}
+
+.contactsDDL {
+  width: 312%;
+}
+
+.notesTextArea {
+   margin: 0px -0.84375px 0px 0px;
+   width: 324%; 
+   height: 115px;
+   white-space: pre-line;
+}
+
+.formatNotesText {
+   white-space: pre-line;
+}
+
+.editIcon {
+   background-image: url(images/edit.png);
+   background-repeat:no-repeat;
+}
+
+.detailsIcon {
+   background-image: url(images/details.png);
+   background-repeat:no-repeat;
+}
+
+.fileAttachment {
+   width: 70%;
+}
+
+.req-asterisk {
+   display:inline-block;
+   position:relative;   
+}
+
+.req-asterisk:after {
+   content: "*";
+   color: red;
+   font:30px 'Trebuchet MS',helvetica,arial,verdana;
+   position:absolute;
+   right: -15px;
+   vertical-align:middle; 
+}
+
+.req-asterisk-details {
+   display:inline-block;
+   position:relative;   
+}
+
+.req-asterisk-details:after {
+   content: "*";
+   color: red;
+   font:30px 'Trebuchet MS',helvetica,arial,verdana;
+   position:absolute;
+   left: 124px;
+   vertical-align:middle; 
+}
+
+.req-asterisk-notes {
+   display:inline-block;
+   position:relative;   
+}
+
+.req-asterisk-notes:after {
+   content: "*";
+   color: red;
+   font:30px 'Trebuchet MS',helvetica,arial,verdana;
+   position:absolute;
+   left: 57px;
+   vertical-align:middle; 
+}
+
+/*.req:after {
+	content: "*";
+    color: red;
+    font:30px 'Trebuchet MS',helvetica,arial,verdana;
+    margin-left: 0px;
+}*/
+
+.required {
+  text-align:right; 
+  color:red; 
+  font-size:medium;
+}
+
+.requiredasterisk {
+  color: red; 
+  margin-left: 0px; margin-right: 0px; 
+  vertical-align: top; 
+  font:2.0em 'Trebuchet MS',helvetica,arial,verdana;
+}
+
+.notification {
+  color: red; 
+  margin-left: 0px; margin-right: 0px; 
+  font:1.1em 'Trebuchet MS',helvetica,arial,verdana;
+}
+
+.display-label {
+    margin: 0.5em 0;
+    font-size: 14px;
+    font-weight: bold;
+} 
+
+.Admin-Section-Alternate {
+	margin: auto;
+    width: 35%;
+    border:1px solid #E5E5E5;
+    padding: 10px; 
+}
+
+.Admin-Section-Alternate H3 {
+	/*color: #288400;*/
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: medium;
+	font-weight: normal;
+	margin-bottom: -10px;
+    margin-left: 44px;
+}
+
+.Admin-Section-Alternate ul {
+	padding: 2px;
+	margin-left: 0px;
+}
+
+.Admin-Section-Alternate ul li {
+	line-height: 18px;
+	padding-top: 1px;
+	margin-right: 0px;
+	margin-left: 54px;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+
+
+#Admin-Container:after
+
+.Admin-Section {
+	float:none;
+	padding-right: 30px;
+}
+
+.Admin-Section H3 {
+	/*color: #288400;*/
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: medium;
+	font-weight: normal;
+	margin-bottom: -10px;
+    margin-left: 44px;
+}
+
+.Admin-Section ul {
+	padding: 2px;
+	margin-left: 0px;
+}
+
+.Admin-Section ul li {
+	line-height: 18px;
+	padding-top: 1px;
+	margin-right: 0px;
+	margin-left: 74px;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+.Admin-Section A:link {
+	color: #0072bc;
+	text-decoration: none;
+}
+
+.Admin-Section A:visited {
+	color: #0072bc;
+	text-decoration: none;
+}
+
+.Admin-Section A:hover {
+	text-decoration: underline;
+}
+
+.ui-widget-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #AAA url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+	opacity: .8;
+	filter: Alpha(Opacity=30);
+}
+
+label, input {
+	/*display: block;*/
+    display:inline;
+}
+
+input.text {
+	margin-bottom: 12px;
+	width: 95%;
+	padding: .4em;
+}
+
+fieldset {
+	padding: 0;
+	border: 0;
+	margin-top: 25px;
+}
+
+.ui-dialog .ui-state-error {
+	padding: .3em;
+}
+
+.validateTips {
+	border: 1px solid transparent;
+	padding: 0.3em;
+}
+
+#zebra div:nth-child(odd) {
+   background-color: #eeeeee;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.helpHeaderSize {
+ font-size:25px; 
+}
+.statusTextPosition {
+   text-align:left;
+   font-weight:bold;
+}
+
+.priorityTextPosition {
+  text-align:center;
+  font-weight:bold;
+}
+
+.alignCheckBox {
+  text-align:center;
+}
+
+.critical {
+  /*background-image: url(images/critical.png);*/
+  color:black;
+  background-color:#ff3030; /* red(firebrick) */
+  background-repeat:no-repeat;
+  background-position:right;
+}
+
+.high {
+  /*background-image: url(images/high.png);*/
+  color:black;
+  background-color:#ffa500; /* orange */
+  background-repeat:no-repeat;
+  background-position:right;
+}
+
+.medium {
+  /*background-image: url(images/medium.png);*/
+  color:black;
+  background-color:#FFFF33; /* yellow(Light yellow4) */
+  background-repeat:no-repeat;
+  background-position:right;
+}
+
+.low {
+ /*background-image: url(images/low.png);*/
+ color:black;
+ background-color:#66cd00; /* green(chartreuse3) */
+ background-repeat:no-repeat;
+ background-position:right;
+}
+
+.open {
+ color:#1BB1DD;    
+}
+
+.inProgress {
+ color: #660000;
+}
+
+.closed {
+  color: #176b06;
+}
+
+.resolved {
+  color: #587652;
+}
+
+.bckgrd-highlight {
+ background-color: #F0F0F0;
+}
+
+/* Issue History toggle styling */
+.toggle {
+margin: 0;
+padding: 0;
+width: auto;
+background-color: #F0F0F0; 
+}
+
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+/*background-color:#c30;*/
+background-color: #33CC33; 
+}
+
+.content {
+padding: 5px 10px;
+/*background-color: #fafafa;*/
+}
+
+/* 'search contacts' yellow highlight hover 
+#gradient-style tbody tr:hover td
+{
+	border-bottom: 1px dashed #bbb;
+	background-color: Yellow; 
+}*/
+
+/*.detailsrequired { 
+ padding: 40px 10px 10px 10px; 
+}*/

@@ -1,0 +1,89 @@
+﻿@model Bug_Lite.Models.Contact
+@using Bug_Lite.HelperClasses
+
+@{
+    ViewBag.Title = "Edit - Contact";
+ }
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     <div class="container col-md-12 col-md-offset-0 panel panel-default">
+          <ul class="breadcrumb">
+           <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+           <li>@Html.ActionLink("Manage Contacts", "Index")</li>
+           <li class="active">Edit - Contact</li>
+          </ul>
+         <fieldset>
+          <legend class="text-success">Edit - Contact</legend>
+          <div class="required"><span class="requiredasterisk">*</span> Required</div>    
+          @Html.HiddenFor(model => model.ContactId)
+        <div class="col-md-3 col-md-offset-4">
+          <div class="editor-label">
+            @Html.LabelFor(model => model.ContactName, new { @class="req-asterisk" })
+          </div>
+          <div class="editor-field">
+            @Html.TextBoxFor(model => model.ContactName, new { @class = "form-control" })
+            @*@Html.RequiredFieldFor(model => model.ContactName)*@
+            @Html.ValidationMessageFor(model => model.ContactName)
+          </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.District)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.District, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.District)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Company)
+        </div>
+        <div class="editor-field">
+             @Html.TextBoxFor(model => model.Company, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Company)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JobTitle)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.JobTitle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.JobTitle)
+        </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.ContactNumber, new { @class="req-asterisk" })
+         </div>
+         <div class="editor-field">
+            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control" })
+            @*@Html.RequiredFieldFor(model => model.ContactNumber)*@
+            @Html.ValidationMessageFor(model => model.ContactNumber)
+         </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.EmailAddress, new { @class="req-asterisk" })
+         </div>
+         <div class="editor-field">
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "textBoxContactEmail form-control" })
+            @*@Html.RequiredFieldFor(model => model.EmailAddress)*@
+            @Html.ValidationMessageFor(model => model.EmailAddress)
+         </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+         </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+         </div>
+         <p>
+          <input type="submit" value="Save" class="btn btn-success btn-md"/>
+         </p>
+        </div><!-- col-md-3.. END -->
+      </fieldset>
+     </div><!-- container END --> 
+}
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br /> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />

@@ -1,0 +1,54 @@
+﻿@model Bug_Lite.Models.StatusCode
+@using Bug_Lite.HelperClasses
+
+@{
+    ViewBag.Title = "Edit - Status Code";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="container col-md-12 col-md-offset-0 panel panel-default">
+         <ul class="breadcrumb">
+          <li>@Html.ActionLink("Administration", "Index", "Admin")</li>
+          <li> @Html.ActionLink("Status Codes", "Index")</li>
+          <li class="active">Edit - Status Code</li>
+         </ul>
+      <fieldset>
+        <legend class="text-success">Edit - Status Code</legend>
+          <div class="required"><span class="requiredasterisk">*</span> Required</div>
+          @Html.HiddenFor(model => model.StatusCodeId)
+
+        <div class="col-md-3 col-md-offset-4">
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Status, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Status, new { @class = "genericTextBox form-control" })
+            @Html.RequiredFieldFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+        </div>
+         <p>
+          <input type="submit" value="Save" class="btn btn-success btn-md"/>
+         </p>
+        </div><!-- col-md-3.. END -->
+    </fieldset>
+  </div><!-- container END -->  
+}
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br /> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />

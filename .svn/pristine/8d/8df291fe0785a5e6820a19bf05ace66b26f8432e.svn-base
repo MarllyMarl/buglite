@@ -1,0 +1,65 @@
+﻿@model Bug_Lite.ViewModels.AdminData
+   
+@{
+    ViewBag.Title = "Admin";    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="Admin-Container" class="row container">
+    @if (ViewBag.UserRole == "Admin")
+    {
+     <div class="Admin-Section col-md-4 panel panel-default">
+        <h3>Application Management <span class="glyphicon glyphicon-cog"></span></h3>
+        <hr />
+        <ul>
+            <li>@Html.ActionLink("Operating Systems", "Index", "WindowsOperatingSystem")</li>
+            <li>@Html.ActionLink("Issue Types", "Index", "IssueType")</li>
+            <li>@Html.ActionLink("Priority Codes", "Index", "PriorityCode")</li>
+            <li>@Html.ActionLink("Status Codes", "Index", "StatusCode")</li>        
+        </ul>
+     </div>
+     <div class="Admin-Section col-md-4 panel panel-default">
+        <h3>Product Management <span class="glyphicon glyphicon-cog"></span></h3>
+        <hr />
+        <ul>
+            <li>@Html.ActionLink("CADD Products (Platforms)", "Index", "CADDSoftwareProduct")</li>
+            <li>@Html.ActionLink("FDOT Release Versions", "Index", "FDOTReleaseVersion")</li>
+            <li>@Html.ActionLink("ECSO Support Categories", "Index", "ECSOSupportCategory")</li>
+            <li>@Html.ActionLink("ECSO Support Products", "Index", "ECSOSupportProduct")</li>
+        </ul>
+     </div>
+     <div class="Admin-Section col-md-4 panel panel-default">
+        <h3>User Management <span class="glyphicon glyphicon-user"></span></h3>
+        <hr />
+        <ul>
+            <li>@Html.ActionLink("Manage Users", "Index", "FDOTUser")</li>      
+            <li>@Html.ActionLink("Manage User Sections", "Index", "UserSection")</li>      
+            <li>@Html.ActionLink("Manage User Roles", "Index", "UserRole")</li>      
+            <li>@Html.ActionLink("Manage Contacts", "Index", "Contact")</li>      
+        </ul>
+    </div>
+   }
+   @if (ViewBag.UserRole == "User")
+   { 
+      <div class="Admin-Section-Alternate">
+        <h3>User Management <span class="glyphicon glyphicon-user"></span></h3>
+        <hr />
+        <ul>   
+            <li>@Html.ActionLink("Manage Contacts", "Index", "Contact")</li>      
+        </ul>
+      </div>
+   }
+</div>
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br />
+
+
+
+

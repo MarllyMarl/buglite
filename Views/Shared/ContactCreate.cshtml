@@ -1,0 +1,72 @@
+﻿@model Bug_Lite.Models.Contact
+@using Bug_Lite.HelperClasses
+
+@using (Html.BeginForm("Create", "Contact", FormMethod.Post, new { id = "ContactCreate" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.Hidden("HiddenContactId");
+    
+    <div class="container col-md-10 col-md-offset-1 panel panel-default">
+     <fieldset>
+        <legend>Contact</legend>
+        <div class="required"><span class="requiredasterisk">*</span> Required</div>
+        <div class="">
+         <div class="editor-label">
+            @Html.LabelFor(model => model.ContactName, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ContactName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ContactName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.District)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.District, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.District)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Company)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Company, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Company)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JobTitle)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.JobTitle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.JobTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactNumber, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ContactNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailAddress, new { @class="req-asterisk" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EmailAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.Active, new { @checked = "checked" })
+        </div>
+      </div><!-- class=""  END -->
+     </fieldset>  
+   </div><!-- container col-md-10  END -->
+}
+

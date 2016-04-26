@@ -1,0 +1,71 @@
+﻿@using Bug_Lite.Static_Classes
+
+@{
+    ViewBag.Title = "BugLite 2.0";
+}
+
+ <div class="container col-md-10 col-md-offset-1 panel panel-default">
+     <fieldset>
+     <legend class="text-success helpHeaderSize">BugLite 2.0</legend>
+     <div class="">
+      <h3>About BugLite</h3><br />
+      <b>BugLite is the Engineering/CADD System's Office's (ECSO) latest Software Issue Tracking System</b>.
+      The purpose for this application is to serve as a viable repository for creating, assigning, tracking, fixing, 
+      and releasing development software specific issues or bugs.
+      <br />
+      <h3>Terms and Definitions</h3><br />
+         1. Issue Statuses
+         <br /><br />
+         The following are the explanation for each of the standard statuses that are used with BugLite:
+         <ul>
+           <li><b>New</b> - indicates a new issue has been created and assigned to a team member.</li>
+           <li><b>Closed</b> - indicates that the issue is completely closed and no further actions are required on it. It may also reflect the issue has been fixed and released to customers.</li>
+           <li><b>InProgress</b> - indicates the issue is currently been worked on or assessed.</li>
+           <li><b>Resolved</b> - indicates that the issue has been fixed.</li>
+         </ul>
+         2. Priorities
+         <br /><br />
+         The following are the explanation for each of the standard priorities that are used with BugLite:
+         <ul>
+           <li><b>Critical</b> - indicates that the issue should be resolved immediately.</li>
+           <li><b>High</b> - indicates that the issue should be resolved as soon as possible before the software is released.</li>
+           <li><b>Medium</b> - indicates that the issue should be resolved at a reasonable timeframe before the softare is released.</li>
+           <li><b>Low</b> - indicates that the issue can be resolved at a later date.</li>
+         </ul>
+         <h3>Contact</h3><br /> 
+         <div class="col-md-4">
+          <b>Name</b>
+          <br />
+          Marlon Dunn<br />
+          Andrew Fuller<br />
+          Jason Roberts
+         </div>
+         <div class="col-md-4">
+          <b>Phone</b>
+          <br />
+           850.414.414-4798<br />
+           850.414.414-4829<br />
+           850.414.414-4766
+         </div>
+         <div class="col-md-4">
+          <b>Email</b>
+             <br />
+             <a href="mailto:marlon.dunn@dot.state.fl.us">marlon.dunn@dot.state.fl.us</a><br />
+             <a href="mailto:andrew.fuller@dot.state.fl.us">andrew.fuller@dot.state.fl.us</a><br />
+             <a href="mailto:jason.roberts@dot.state.fl.us">jason.roberts@dot.state.fl.us</a>
+         </div> 
+     </div>
+   </fieldset>
+   <br /><br />
+ </div> 
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />
